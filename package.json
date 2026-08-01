@@ -5,7 +5,7 @@
     "dev": "vite build --watch",
     "watch": "vite build --watch",
     "prod": "npm run production",
-    "production": "vite build"
+    "build": "vite build"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.0",

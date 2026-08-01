@@ -1,3 +1,5 @@
+from typing import ClassVar
+
 from masonite.auth import Sign
 from masonite.configuration import Configuration, config
 from masonite.environment import LoadEnvironment
@@ -22,15 +24,14 @@ from app.middlewares.VerifyCsrfToken import VerifyCsrfToken
 
 
 class Kernel:
-
-    http_middleware = [
+    http_middleware: ClassVar[list[type]] = [
         EncryptCookies,
         ClearDumpsBetweenRequestsMiddleware,
         IpMiddleware,
         MaintenanceModeMiddleware,
     ]
 
-    route_middleware = {
+    route_middleware: ClassVar[dict[str, list[type]]] = {
         "web": [
             SessionMiddleware,
             ShareErrorsInSessionMiddleware,

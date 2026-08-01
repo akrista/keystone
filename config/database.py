@@ -1,5 +1,5 @@
-from masoniteorm.connections import ConnectionResolver
 from masonite.environment import env
+from masoniteorm.connections import ConnectionResolver
 
 DATABASES = {
     "default": env("DB_CONNECTION", "sqlite"),
